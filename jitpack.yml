@@ -1,4 +1,4 @@
 jdk:
   - openjdk21
 install:
-  - sdk install gradle 9.1.0 && sdk use gradle 9.1.0 && gradle build publishToMavenLocal
+  - sdk install gradle 9.5.1 && sdk use gradle 9.5.1 && gradle build publishToMavenLocal

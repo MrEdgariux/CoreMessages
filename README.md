@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     compileOnly 'io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT'
-    implementation 'com.github.MrEdgariux:CoreMessages:1.0.0'
+    implementation 'com.github.MrEdgariux:CoreMessages:1.0.2'
 }
 ```
 
@@ -47,7 +47,7 @@ In your plugin's `pom.xml`:
     <dependency>
         <groupId>com.github.MrEdgariux</groupId>
         <artifactId>CoreMessages</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
     </dependency>
     <dependency>
         <groupId>io.papermc.paper</groupId>
@@ -179,8 +179,8 @@ Placeholder expansion runs for player-specific messages. Console messages and br
 ## Publish a release from source
 
 1. Put this project's files at the root of a public GitHub repository named `CoreMessages` under `MrEdgariux`. If the account or repository name differs, change the dependency coordinates shown above.
-2. Build with JDK 21 using `gradle build publishToMavenLocal`. The included `jitpack.yml` selects JDK 21 on JitPack. To pin Gradle too, generate and commit a Gradle wrapper, then change `jitpack.yml` to invoke `./gradlew build publishToMavenLocal`.
-3. Commit and push the source, create a tag such as `1.0.0`, and push the tag: `git tag 1.0.0 && git push origin 1.0.0`.
+2. Build with JDK 21 using Gradle 9.5.1: `gradle build publishToMavenLocal`. The included `jitpack.yml` selects JDK 21 and installs Gradle 9.5.1 on JitPack. For a reproducible local build, generate and commit a Gradle wrapper with `gradle wrapper --gradle-version 9.5.1`, then change `jitpack.yml` to invoke `./gradlew build publishToMavenLocal`.
+3. Commit and push the source, create a tag such as `1.0.2`, and push the tag: `git tag 1.0.2 && git push origin 1.0.2`.
 4. Look up the repository on [jitpack.io](https://jitpack.io/) and confirm the tagged build succeeds. JitPack will serve the resulting Maven artifact.
 
 For later releases, update `version` in `build.gradle`, tag a new version, and update that version in consuming plugins. Rebuild and redeploy those plugins to use the new code.
