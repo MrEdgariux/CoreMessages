@@ -1,0 +1,6 @@
+.gradle/
+build/
+.idea/
+*.iml
+README_A.md
+examples/
